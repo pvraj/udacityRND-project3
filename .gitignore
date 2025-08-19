@@ -1,0 +1,6 @@
+.vscode/settings.json
+simple_arm/
+
+# Ignore build and devel directories (located one level up)
+../build/
+../devel/
