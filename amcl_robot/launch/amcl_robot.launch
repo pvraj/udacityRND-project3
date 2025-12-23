@@ -2,6 +2,10 @@
 
 <launch>
 
+  <!-- 6.7 Map Server --> 
+  <arg name="map_file" default="$(find amcl_robot)/maps/brick_world_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
   <!-- Robot pose -->
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
