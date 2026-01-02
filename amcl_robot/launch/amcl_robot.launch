@@ -6,6 +6,19 @@
   <arg name="map_file" default="$(find amcl_robot)/maps/brick_world_map.yaml"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
+  <!-- 6.8 AMCL node -->
+  <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <!-- <remap from="scan" to="amcl_robot/laser/scan"/> -->
+    <!-- no remap needed, already named scan when I checked terminal -->
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="robot_footprint"/>
+    <param name="global_frame_id" value="map"/>
+    <!-- got coordinates from gazebo -->
+    <param name="initial_pose_x" value="0.0"/>
+    <param name="initial_pose_y" value="0.0"/>
+  </node>
+
   <!-- Robot pose -->
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
