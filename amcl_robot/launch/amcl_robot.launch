@@ -19,6 +19,17 @@
     <param name="initial_pose_y" value="0.0"/>
   </node>
 
+    <!-- 6.9 Move Base --> 
+    <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
+      <param name="base_global_planner" value="navfn/NavfnROS" />
+      <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+      <rosparam file="$(find amcl_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find amcl_robot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find amcl_robot)/config/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find amcl_robot)/config/global_costmap_params.yaml" command="load" />
+      <rosparam file="$(find amcl_robot)/config/base_local_planner_params.yaml" command="load" />
+    </node>
+
   <!-- Robot pose -->
   <arg name="x" default="0"/>
   <arg name="y" default="0"/>
