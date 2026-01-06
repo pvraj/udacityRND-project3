@@ -10,7 +10,7 @@ ros::ServiceClient client;
 void drive_robot(float lin_x, float ang_z)
 {
     // based on look_away.cpp
-    ROS_INFO_STREAM("Driving Robot to lin_x " << lin_x << "; ang_z: " << ang_z);
+    // ROS_INFO_STREAM("Driving Robot to lin_x " << lin_x << "; ang_z: " << ang_z);
     // TODO: Request a service and pass the velocities to it to drive the robot
     ball_chaser::DriveToTarget srv;
     srv.request.linear_x = lin_x;

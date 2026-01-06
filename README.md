@@ -1,5 +1,6 @@
 # Project 3 AMCL
 This uses all the old code from the prior 2 projects (existing gazebo world and robot).
+You can ignore the `ball_chaser` and `my_robot` (from the old projects); these are needed to reference the old gazebo world and old robot and reuse their code. The `gazebo_ros_2Dmap_plugin` was used to generate the map, as suggested by a mentor (link below). The `teleop_twist_keyboard` is for manual control of the robot
 
 ## Misc
 
