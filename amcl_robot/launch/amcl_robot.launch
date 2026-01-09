@@ -70,7 +70,7 @@
   </node>
 
     <!-- The process_image node -->
-  <node name="process_image" type="process_image" pkg="ball_chaser" output="screen">
-  </node>
+  <!-- <node name="process_image" type="process_image" pkg="ball_chaser" output="screen">
+  </node> -->
 
 </launch>
