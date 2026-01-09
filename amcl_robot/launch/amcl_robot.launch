@@ -17,6 +17,7 @@
     <!-- got coordinates from gazebo -->
     <param name="initial_pose_x" value="0.0"/>
     <param name="initial_pose_y" value="0.0"/>
+    <param name="max_particles" value="150" />
   </node>
 
     <!-- 6.9 Move Base --> 
