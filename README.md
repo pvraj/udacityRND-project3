@@ -33,7 +33,14 @@ Notes: I tried many combinations of different parameters in the config/yaml file
 Parameters found here https://wiki.ros.org/base_local_planner#Parameters
 
 ### Teleop debugging
-In another terminal, run `rosrun teleop_twist_keyboard teleop_twist_keyboard.py _repeat_rate:=<>> _key_timeout:=<> _speed:=0.5 _turn:=1.0`. Note however that teleop is much less smooth and stops motion abruptly, because it doesn't seem to expose parameters (like acceleration) to smooth out the motion, as opposed to the base_local_planner used in the autonomous navigation above. I tried to tune this awhile but after realizing the limitations of teleop I gave up on it. Repeat rate may be something 20-40 and the timeout tens of a second
+ Based on the Udacity instructions, do the following: 
+ 1. git clone https://github.com/ros-teleop/teleop_twist_keyboard in this project root
+ 2. `catkin_make`
+ 3. `source devel/setup.bash`
+Now, 
+run `rosrun teleop_twist_keyboard teleop_twist_keyboard.py _repeat_rate:=<>> _key_timeout:=<> _speed:=0.5 _turn:=1.0`. Then follow the instructions using the keys listed to move the robot accordingly.
+
+Note: teleop is much less smooth and stops motion abruptly, because it doesn't seem to expose parameters (like acceleration) to smooth out the motion, as opposed to the base_local_planner used in the autonomous navigation above. I tried to tune this awhile but after realizing the limitations of teleop I gave up on it. Repeat rate may be something like 20-40 and the timeout something like 0.3
 
 ### additional helpful images
 1. This first image below is when running the system in 1 terminal; teleop in another terminal; and gazebo and rviz both open (the space is a bit cramped on a small screen). The red arrows show particles. Red lines/dots in the environment represent areas the Lidar has scanned. The map currently shown is the local costmap. Notice the particles at the start are fairly spread out:
