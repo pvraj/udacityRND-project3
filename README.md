@@ -5,6 +5,7 @@ This repos uses all the old code from the prior 2 projects (existing gazebo worl
 You can ignore the `ball_chaser` and `my_robot` (from the old projects); these are needed to reference the old gazebo world and old robot and reuse their code, since it appears each project in the udacity class builds on assets from the previous project. 
 
 The [`gazebo_ros_2Dmap_plugin`](https://github.com/marinaKollmitz/gazebo_ros_2Dmap_plugin/tree/master) was used to generate the map, as suggested by a mentor (link below). The `teleop_twist_keyboard` is for manual control of the robot
+I used a local VM running Ubuntu 20.04 ROS/Noetic on an old intel mac. The Udacity cloud environment unfortunately was unusable for me.
 
 ## Running
 1. The repo should be in the ~/catkin_ws directory
@@ -63,6 +64,6 @@ Learned a little about coordinate frames in Gazebo. Used `rosrun tf tf_echo map 
 ![Directed graph visualization showing ROS transform tree hierarchy with map and base_link coordinate frames and their parent-child relationships](./amcl_robot/images/tf_frames.png)
 
 ### map
-Lesson uses a 2D map of the existing gazebo world from past projects. Instructed to use this [repo](https://github.com/marinaKollmitz/gazebo_ros_2Dmap_plugin/tree/master) by the [mentor](https://knowledge.udacity.com/questions/1072496), since the one in the lesson is broken/out of date. 
+Lesson uses a 2D map of the existing gazebo world from past projects. Instructed to use this [repo](https://github.com/marinaKollmitz/gazebo_ros_2Dmap_plugin/tree/master) by the [mentor](https://knowledge.udacity.com/questions/1072496) to generate the map, since the one in the Udacity lesson is broken/out of date. I cloned this in the repo and followed the instructions to generate the .pgm map file.
 
 ![Gazebo simulation environment displaying a brick-textured world with a mobile robot positioned in the simulated space](./amcl_robot/images/brick_world_map.png)
