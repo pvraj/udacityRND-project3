@@ -1,23 +1,30 @@
-controller_frequency: 10
+controller_frequency: 20
 
 TrajectoryPlannerROS:
-  max_vel_x: 1.0 #0.5
-  min_vel_x: -0.1 #0.01. maybe 0.0 here since the robot can't go backwards and that way it matches process_image.cpp
-  max_vel_theta: 1.57 #1.5
+  max_vel_x: 0.5 #0.5
+  min_vel_x: 0.1 #  didn't realize this is miniimum forward velocity, not backwards velocity. see here https://wiki.ros.org/base_local_planner#Parameters
+  max_vel_theta: 1.0 #1.5
 
-  min_in_place_vel_theta: 0.314
+  min_in_place_vel_theta: 0.1
 
-  acc_lim_theta: 3.14
-  acc_lim_x: 2.0
-  acc_lim_y: 2.0
+  acc_lim_theta: 1.0
+  acc_lim_x: 0.5
+  acc_lim_y: 0.5
+  sim_time: 2.0 # The amount of time to forward-simulate trajectories in seconds https://wiki.ros.org/base_local_planner#Parameters
 
-  sim_time: 1.0
+  vx_samples: 12.0
+  vtheta_samples: 20.0
 
-  vx_samples: 5.0
-  vtheta_samples: 10.0
 
-  pdist_scale: 0.6 #0.6
+  pdist_scale: 0.1 #0.6
   gdist_scale: 0.8 #0.8
-  occdist_scale: 0.02
+  occdist_scale: 0.60
 
   holonomic_robot: false
+
+  # this is in an attempt to get the robot to stop spinning in circles in place when it reaches the destination
+  xy_goal_tolerance: 0.2        
+  yaw_goal_tolerance: 0.2 
+
+  # once reached the x,y coordinates, only spin in place to fix orientation (regardless of whether this causes the robot to drif)
+  latch_xy_goal_tolerance: true
